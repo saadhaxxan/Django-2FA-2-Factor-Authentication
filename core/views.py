@@ -78,11 +78,6 @@ class AccountLoginView(FormView):
         return super().form_invalid(form)
 
     def form_valid(self, form):
-
-        # self.request.user returns AnonymousUser
-        # self.request.user.is_authenticated returns False
-        # self.request.user.is_verified() returns False
-
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
         otp_token = form.cleaned_data.get('otp_token')
@@ -91,17 +86,8 @@ class AccountLoginView(FormView):
         user = authenticate(request=self.request, username=username, password=password)
 
         if user is not None:
-
             device_match = match_token(user=user, token=otp_token)
-
-            # device_match returns None
-
             auth_login(self.request, user)
-
-            # self.request.user returns admin@mywebsite.com
-            # self.request.user.authenticated returns True
-            # self.request.user.is_verified returns AttributeError 'User' object has no attribute 'is_verified'
-            # user.is_verified returns AttributeError 'User' object has no attribute 'is_verified'
 
         return super().form_valid(form)
 

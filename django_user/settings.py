@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_otp',
     'django_otp.plugins.otp_totp',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -115,7 +116,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 LOGIN_REDIRECT_URL = 'home'
 
 # Page to go after successfull logout
-# LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 # This will display email in Console.
 EMAIL_USE_TLS = True

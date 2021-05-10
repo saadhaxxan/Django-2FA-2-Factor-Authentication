@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Django 2FA (2 Factor Authentication)</h1>
 </div>
-<h6>TOTP stands for Time-based One-Time Password. It’s a fairly simple algorithm that involves combining a shared secret key with the current time to generate a verification token that’s only valid for a short amount of time. This is a django app to implement OTP using gmail QRcode</h6>
+<h6>TOTP stands for Time-based One-Time Password. It’s a fairly simple algorithm that involves combining a shared secret key with the current time to generate a verification token that’s only valid for a short amount of time. This is a django app to implement OTP using gmail Qrcode.</h6>
 
 ## Installation steps
 

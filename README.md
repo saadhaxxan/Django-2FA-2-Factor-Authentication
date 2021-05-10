@@ -2,7 +2,6 @@
 <h1>Django 2FA (2 Factor Authentication)</h1>
 <br>
 </div>
-<hr>
 <h4>TOTP stands for Time-based One-Time Password. It’s a fairly simple algorithm that involves combining a shared secret key with the current time to generate a verification token that’s only valid for a short amount of time. This is a django app to implement OTP using gmail QRcode</h4>
 
 ## Installation steps
@@ -16,17 +15,19 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-Go to - http://localhost:8000/
+Go to http://localhost:8000/
 ```
 
 ## Email Settings
 
+```
 `EMAIL_USE_TLS = True`
 `EMAIL_PORT = 587`
 `EMAIL_HOST = 'smtp.gmail.com'`
 `EMAIL_HOST_USER = 'yourgmail@gmail.com'`
 `EMAIL_HOST_PASSWORD = 'yourpassword'`
 `EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'`
+```
 
 ## Attention
 
